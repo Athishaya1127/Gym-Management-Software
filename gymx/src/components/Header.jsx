@@ -14,7 +14,7 @@ export default function Header() {
         <Link to="/" className="active">
           Home
         </Link>
-        <a href="#about">About</a>
+        <Link to="/about">About</Link>
         <a href="#services">Services</a>
         <a href="#membership">Memberships</a>
         <a href="#classes">Classes</a>
