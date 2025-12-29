@@ -1,13 +1,14 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import heroImg from "../assets/hero.jpg";
 
 const Hero = () => {
   return (
     <section className="relative w-full h-screen flex items-center justify-center">
       {/* Background Image */}
-      <img 
-        src={heroImg} 
-        alt="hero" 
+      <img
+        src={heroImg}
+        alt="hero"
         className="absolute inset-0 w-full h-full object-cover"
       />
 
@@ -17,8 +18,8 @@ const Hero = () => {
       {/* Content */}
       <div className="relative z-10 text-center px-6">
         <h1 className="text-white text-5xl md:text-7xl font-extrabold drop-shadow-lg leading-tight">
-          PUSH HARDER.  
-          <br />  
+          PUSH HARDER.
+          <br />
           GO FURTHER.
         </h1>
 
@@ -27,18 +28,18 @@ const Hero = () => {
         </p>
 
         <div className="mt-8 flex justify-center gap-4 flex-wrap">
-          <a 
-            href="/signup" 
-            className="px-6 py-3 bg-yellow-400 text-black font-bold rounded-lg shadow-md"
+          <Link
+            to="/signup"
+            className="px-6 py-3 bg-yellow-400 text-black font-bold rounded-lg shadow-md hover:bg-yellow-500 transition-colors"
           >
             Join Now
-          </a>
-          <a 
-            href="/plans" 
-            className="px-6 py-3 bg-white text-black font-semibold rounded-lg"
+          </Link>
+          <Link
+            to="/membership-plans"
+            className="px-6 py-3 bg-white text-black font-semibold rounded-lg hover:bg-gray-100 transition-colors"
           >
             Explore Plans
-          </a>
+          </Link>
         </div>
       </div>
     </section>

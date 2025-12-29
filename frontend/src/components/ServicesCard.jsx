@@ -30,7 +30,7 @@ const ServicesCard = ({ title, description, icon = "dumbbell" }) => {
   const Icon = icon === "group" ? IconGroup : icon === "nutrition" ? IconNutrition : IconDumbbell;
 
   return (
-    <div className="bg-[#121212] rounded-2xl p-8 shadow-lg w-full md:w-80 hover:scale-105 transition">
+    <div className="bg-[#121212] rounded-2xl p-8 shadow-lg w-full md:w-80 hover:scale-105 transition border border-white/20">
       <div className="text-white mb-6">
         <Icon />
       </div>
