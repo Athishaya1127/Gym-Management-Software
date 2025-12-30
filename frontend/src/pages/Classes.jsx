@@ -30,24 +30,27 @@ const classesList = [
 
 const Classes = () => {
   return (
-    <section className="py-24">
-      <div className="max-w-6xl mx-auto px-6 text-center">
-        <h1 className="text-4xl font-bold mb-4">Our Classes</h1>
-        <p className="text-text-light mb-10">Group sessions that are fun, safe, and effective.</p>
+    <section className="relative py-24 min-h-screen bg-[url('https://i.pinimg.com/736x/90/4e/07/904e07c54af5f30d1beb05482c0e8b59.jpg')] bg-cover bg-center bg-no-repeat bg-fixed">
+      {/* Overlay */}
+      <div className="absolute inset-0 bg-black/85"></div>
+
+      <div className="relative z-10 max-w-6xl mx-auto px-6 text-center">
+        <h1 className="text-4xl font-bold mb-4 text-white">Our Classes</h1>
+        <p className="text-gray-300 mb-10">Group sessions that are fun, safe, and effective.</p>
 
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
           {classesList.map((c, i) => (
-            <div key={i} className="bg-[#0f1724] rounded-2xl overflow-hidden hover:scale-105 transition shadow-lg group">
+            <div key={i} className="bg-black rounded-2xl overflow-hidden hover:scale-105 transition shadow-lg group border border-white/10 hover:border-yellow-400">
               <div className="h-48 overflow-hidden">
                 <img
                   src={c.image}
                   alt={c.name}
-                  className="w-full h-full object-cover group-hover:scale-110 transition duration-500"
+                  className="w-full h-full object-cover group-hover:scale-110 group-hover:brightness-110 brightness-75 transition duration-500"
                 />
               </div>
               <div className="p-8">
                 <h3 className="text-xl font-semibold text-white">{c.name}</h3>
-                <p className="text-text-light mt-2">{c.description}</p>
+                <p className="text-gray-300 mt-2">{c.description}</p>
               </div>
             </div>
           ))}

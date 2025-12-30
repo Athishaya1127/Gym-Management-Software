@@ -26,16 +26,31 @@ const IconNutrition = () => (
   </svg>
 );
 
-const ServicesCard = ({ title, description, icon = "dumbbell" }) => {
+const ServicesCard = ({ title, description, icon = "dumbbell", image }) => {
   const Icon = icon === "group" ? IconGroup : icon === "nutrition" ? IconNutrition : IconDumbbell;
 
   return (
-    <div className="bg-[#121212] rounded-2xl p-8 shadow-lg w-full md:w-80 hover:scale-105 transition border border-white/20">
-      <div className="text-white mb-6">
-        <Icon />
+    <div className="relative bg-[#121212] rounded-2xl p-8 shadow-lg w-full hover:scale-105 transition border border-white/20 hover:border-yellow-400 overflow-hidden group h-full">
+      {/* Background Image */}
+      {image && (
+        <>
+          <img
+            src={image}
+            alt={title}
+            className="absolute inset-0 w-full h-full object-cover opacity-60 group-hover:scale-110 transition duration-500"
+          />
+          <div className="absolute inset-0 bg-gradient-to-t from-black via-black/80 to-black/60"></div>
+        </>
+      )}
+
+      {/* Content */}
+      <div className="relative z-10">
+        <div className="text-white mb-6">
+          <Icon />
+        </div>
+        <h4 className="text-xl font-semibold text-white mb-2">{title}</h4>
+        <p className="text-gray-300 leading-relaxed font-medium">{description}</p>
       </div>
-      <h4 className="text-xl font-semibold text-white mb-2">{title}</h4>
-      <p className="text-text-light leading-relaxed">{description}</p>
     </div>
   );
 };
